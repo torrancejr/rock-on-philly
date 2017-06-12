@@ -21,5 +21,5 @@
 /yarn-error.log
 /coverage
 
-
+.env
 .byebug_history
