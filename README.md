@@ -1,5 +1,9 @@
 # README
 
+![Build Status](https://codeship.com/projects/afd21e00-31b1-0135-88a3-36beedd22907/status?branch=master)
+![Code Climate](https://codeclimate.com/github/meaghanconroy/review-site-project.png)
+![Coverage Status](https://coveralls.io/repos/meaghanconroy/review-site-project/badge.png)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
