@@ -1,9 +1,6 @@
 class VenuesController < ApplicationController
-
-  #GET /venues
+  # GET /venues
   def index
-    @venues =  Venue.all
+    @venues = Venue.all
   end
-
-
 end
