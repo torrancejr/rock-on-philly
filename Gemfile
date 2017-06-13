@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 
 gem 'foundation-rails'
+gem 'sprockets-rails'
+
 
 group :test do
   gem 'coveralls', require: false
