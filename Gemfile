@@ -19,12 +19,12 @@ gem 'foundation-rails'
 gem 'sprockets-rails'
 
 
-gem 'rails_12factor'
-gem 'jquery-rails'
-gem 'dotenv-rails'
-gem 'dotenv'
-gem 'simplecov'
 gem 'active_model_serializers'
+gem 'dotenv'
+gem 'dotenv-rails'
+gem 'jquery-rails'
+gem 'rails_12factor'
+gem 'simplecov'
 
 
 group :test do
