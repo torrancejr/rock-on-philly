@@ -4,5 +4,9 @@
 <%= @venue.capacity %>
 <%= @venue.website %>
 <img src="<%=@venue.photo%>">
-<%=%>
-<%=%>
+<% @reviews.each do |review| %>
+  <%= review.rating %>
+  <%= review.body %>
+  <%= review.created_at.strftime("%B %d %Y") %>
+<% end %>
+<%= link_to "Add a Review", new_venue_review_path(@venue) %>
