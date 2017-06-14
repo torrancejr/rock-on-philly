@@ -13,11 +13,18 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'pg', '~> 0.18'
 gem 'coffee-rails', '~> 4.2'
-
 gem 'jbuilder', '~> 2.5'
 
 gem 'foundation-rails'
 gem 'sprockets-rails'
+
+
+gem 'rails_12factor'
+gem 'jquery-rails'
+gem 'dotenv-rails'
+gem 'dotenv'
+gem 'simplecov'
+gem 'active_model_serializers'
 
 
 group :test do
