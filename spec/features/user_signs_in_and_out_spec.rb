@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'pry'
-
 
 feature "User signs in" do
   let(:user) do

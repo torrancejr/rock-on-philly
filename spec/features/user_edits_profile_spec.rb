@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'pry'
-
 
 feature "User updates profile" do
   let(:user) do

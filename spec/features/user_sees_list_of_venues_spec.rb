@@ -1,5 +1,4 @@
 require 'rails_helper'
-require "pry"
 
 # [] Visiting the `/venues` path should contain a list of venues.
 # [] Visiting the `/venues/10` path should show the venue details for a venue with the ID of 10.

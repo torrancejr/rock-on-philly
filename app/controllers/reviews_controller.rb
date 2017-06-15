@@ -18,6 +18,19 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @venue = Venue.find(params[:venue_id])
+    @review = Review.find(params[:id])
+  end
+
+  def destroy
+    @venue = Venue.find(params[:venue_id])
+    @review = Review.find(params[:id])
+    @review.destroy
+    flash[:notice] = "Review deleted"
+    redirect_to venue_path(@venue)
+  end
+
   private
 
   def review_params

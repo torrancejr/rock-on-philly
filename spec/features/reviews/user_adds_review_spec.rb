@@ -1,5 +1,4 @@
 require 'rails_helper'
-require "pry"
 
 feature "visitors can add reviews for venues" do
   let(:this_user) do
