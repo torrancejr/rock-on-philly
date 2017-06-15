@@ -1,0 +1,23 @@
+<h1> Create Venue </h1>
+
+<%= form_for @venue do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :location %>
+  <%= f.text_area :location %>
+
+  <%= f.label :ages %>
+  <%= f.text_area :ages %>
+
+  <%= f.label :capacity %>
+  <%= f.number_field :capacity %>
+
+  <%= f.label :website %>
+  <%= f.text_area :website %>
+
+  <%= f.label :photo %>
+  <%= f.text_area :photo %>
+
+  <%= f.submit "Add Venue" %>
+<% end %>

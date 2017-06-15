@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   root "venues#index"
   devise_for :users
 
+  namespace :admin do
+    resources :venues
+    resources :users
+  end
+
   resources :venues do
     resources :reviews
   end

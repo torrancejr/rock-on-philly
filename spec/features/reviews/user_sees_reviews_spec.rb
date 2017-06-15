@@ -1,31 +1,42 @@
 require "rails_helper"
-require "pry"
 
 feature "user sees all reviews for a venue" do
+  let!(:user1) do
+    User.create(
+      first_name: "Meg",
+      last_name: "Conroy",
+      email: "jarlax1@launchacademy.com",
+      password: "testtest"
+    )
+  end
+  let!(:user2) do
+    User.create(
+      first_name: "Chris",
+      last_name: "Ryan",
+      email: "chrisryan@launchacademy.com",
+      password: "testtest"
+    )
+  end
+  let!(:philamoca) do
+    Venue.create(
+      name: "Philamoca",
+      location: "531 N. 12th Street",
+      ages: "All",
+      capacity: 150,
+      website: "http://www.philamoca.org/",
+      photo: "philamoca.jpg"
+    )
+  end
+  let!(:review) do
+    Review.create(
+      rating: 5,
+      body: "Great venue for any show!",
+      venue: philamoca,
+      user: user1
+    )
+  end
+
   scenario "user sees reviews for a specific venue" do
-    user =
-      User.create(
-        first_name: "Meg",
-        last_name: "Meg",
-        email: "jarlax1@launchacademy.com",
-        password: "testtest"
-      )
-    philamoca =
-      Venue.create(
-        name: "Philamoca",
-        location: "531 N. 12th Street",
-        ages: "All",
-        capacity: 150,
-        website: "http://www.philamoca.org/",
-        photo: "philamoca.jpg"
-      )
-    review =
-      Review.create(
-        rating: 5,
-        body: "Great venue for any show!",
-        venue: philamoca,
-        user: user
-      )
 
     visit venue_path(philamoca)
 
@@ -35,22 +46,6 @@ feature "user sees all reviews for a venue" do
   end
 
   scenario "does not see other reviews for other venues" do
-    user =
-      User.create(
-        first_name: "Meg",
-        last_name: "Meg",
-        email: "jarlax1@launchacademy.com",
-        password: "testtest"
-      )
-    philamoca =
-      Venue.create(
-        name: "Philamoca",
-        location: "531 N. 12th Street",
-        ages: "All",
-        capacity: 150,
-        website: "http://www.philamoca.org/",
-        photo: "philamoca.jpg"
-      )
     union_transfer =
       Venue.create(
         name: "Union Transfer",
@@ -66,14 +61,14 @@ feature "user sees all reviews for a venue" do
         rating: 5,
         body: "Great venue for any show!",
         venue: philamoca,
-        user: user
+        user: user1
       )
     review_for_union_transfer =
       Review.create(
         rating: 3,
         body: "Okay, kinda crowded",
         venue: union_transfer,
-        user: user
+        user: user2
       )
     visit venue_path(philamoca)
 

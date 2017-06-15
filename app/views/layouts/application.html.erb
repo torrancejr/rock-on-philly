@@ -11,6 +11,14 @@
   <body>
     <ul>
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+        <li>
+          <%= link_to "View Users", admin_users_path %>
+        </li>
+        <li>
+          <%= link_to "Create Venue", new_venue_path %>
+        </li>
+        <% end %>
         <li>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         </li>
@@ -25,6 +33,7 @@
           <%= link_to "Sign Up", new_user_registration_path %>
         </li>
       <% end %>
+
     </ul>
 
     <% flash.each do |key, value| %>

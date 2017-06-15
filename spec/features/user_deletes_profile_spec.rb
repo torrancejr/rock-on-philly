@@ -1,5 +1,4 @@
 require "rails_helper"
-require "pry"
 
 feature "User deletes profile" do
   let(:user) do

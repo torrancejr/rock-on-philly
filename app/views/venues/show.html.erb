@@ -3,10 +3,16 @@
 <%= @venue.ages %>
 <%= @venue.capacity %>
 <%= @venue.website %>
+<% if current_user.try(:admin?) %>
+  <%= link_to "Delete Venue", admin_venue_path(@venue), method: :delete %>
+<% end %>
 <img src="<%=@venue.photo%>">
 <% @reviews.each do |review| %>
   <%= review.rating %>
   <%= review.body %>
   <%= review.created_at.strftime("%B %d %Y") %>
+  <% if review.user == current_user || current_user.try(:admin?) %>
+    <%= link_to "Delete Review", venue_review_path(review.venue, review), method: :delete %>
+  <% end %>
 <% end %>
 <%= link_to "Add a Review", new_venue_review_path(@venue) %>
