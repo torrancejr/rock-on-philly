@@ -1,20 +1,13 @@
 require 'rails_helper'
 
 feature "User updates profile" do
-  let(:user) do
-  User.create(
-    first_name: "Meg",
-    last_name: "Meg",
-    email: "jarlax1@launchacademy.com",
-    password: "testtest"
-  )
+  let!(:user) do
+    FactoryGirl.create(:user)
+
   end
   scenario 'a user can update their current profile' do
     visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Sign In'
+    sign_in_as(user)
     click_link "Edit/Delete Profile"
     visit edit_user_registration_path(user)
     fill_in 'First Name', with: "Meaghan"
@@ -22,7 +15,7 @@ feature "User updates profile" do
     fill_in 'Email', with: "jarlax3@launchacademy.com"
     fill_in 'Password', with: "test2test2"
     fill_in 'Password Confirmation', with: "test2test2"
-    fill_in 'Current Password', with: "testtest"
+    fill_in 'Current Password', with: user.password
 
     click_button 'Update'
     expect(page).to have_content("Your account has been updated successfully.")
@@ -32,16 +25,13 @@ feature "User updates profile" do
 
   scenario 'a user incorrectly updates their email' do
     visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Sign In'
+    sign_in_as(user)
     click_link "Edit/Delete Profile"
     visit edit_user_registration_path(user)
     fill_in 'Email', with: "jarlaunchacademy.com"
     fill_in 'Password', with: "test2test2"
     fill_in 'Password Confirmation', with: "test2test2"
-    fill_in 'Current Password', with: "testtest"
+    fill_in 'Current Password', with: user.password
 
     click_button 'Update'
     expect(page).to have_content('Email is invalid')
@@ -51,15 +41,12 @@ feature "User updates profile" do
 
   scenario 'a user incorrectly updates their password' do
     visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Sign In'
+    sign_in_as(user)
     click_link "Edit/Delete Profile"
     visit edit_user_registration_path(user)
     fill_in 'Password', with: "st2"
     fill_in 'Password Confirmation', with: "st2"
-    fill_in 'Current Password', with: "testtest"
+    fill_in 'Current Password', with: user.password
 
     click_button 'Update'
     expect(page).to have_content('Password is too short (minimum is 6 characters)')

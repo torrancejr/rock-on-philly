@@ -2,22 +2,12 @@ require 'rails_helper'
 
 feature "User signs in" do
   let(:user) do
-    User.create(
-      # username: "jarlax1",
-      first_name: "Meg",
-      last_name: "Meg",
-      email: "jarlax1@launchacademy.com",
-      password: "testtest"
-    )
+    FactoryGirl.create(:user)
   end
 
   scenario 'an existing user specifies a valid email and password' do
-    new_user = user
     visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: new_user.email
-    fill_in 'Password', with: new_user.password
-    click_button 'Sign In'
+    sign_in_as(user)
     expect(page).to have_content('Welcome Back!')
     expect(page).to have_content('Sign Out')
 
@@ -35,12 +25,8 @@ feature "User signs in" do
   end
 
   scenario "successful sign out" do
-    new_user = user
     visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: new_user.email
-    fill_in 'Password', with: new_user.password
-    click_button 'Sign In'
+    sign_in_as(user)
     click_link "Sign Out"
 
     expect(page).to have_content "You have been signed out"
