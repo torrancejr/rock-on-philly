@@ -1,22 +1,11 @@
 require 'rails_helper'
 
 feature "Admin views a list of users" do
-  let(:admin) do
-    User.create(
-      first_name: "Admin",
-      last_name: "Admin",
-      email: "jarlax@launchacademy.com",
-      password: "testtest",
-      admin: true
-    )
+  let!(:admin) do
+    FactoryGirl.create(:user, admin: true)
   end
   let!(:user1) do
-    User.create(
-      first_name: "Meg",
-      last_name: "Conroy",
-      email: "jarlax1@launchacademy.com",
-      password: "testtest"
-    )
+    FactoryGirl.create(:user)
   end
   let!(:user2) do
     User.create(
@@ -28,10 +17,7 @@ feature "Admin views a list of users" do
   end
   scenario "an admin can delete a user" do
     visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Sign In'
+    sign_in_as(admin)
     click_link 'View Users'
     visit admin_users_path
     within("li##{user1.id}") do
