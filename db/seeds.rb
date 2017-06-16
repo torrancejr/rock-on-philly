@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+def key
+  ENV["SEATGEEK_SECRET"]
+end
+def client_id
+  ENV["SEATGEEK_ID"]
+end
+response = RestClient.get("https://api.seatgeek.com/2/venues?city=Philadelphia&client_id=#{client_id}client_secret=#{key}")
+
+venues = JSON.parse(response.to_s)
+venues.each do |venue|
+  Venue.create(
+    name: venue["name"],
+    location: venue["address"],
+    website: venue["url"]
+  )
+end
