@@ -25,8 +25,6 @@ feature "visitor sees a list of venues" do
 
     expect(page).to have_content venue.name
     expect(page).to have_content venue.location
-    expect(page).to have_content venue.ages
-    expect(page).to have_content venue.capacity
     expect(page).to have_content venue.website
     expect(page).to have_css("img[src*='uniontransfer.jpg']")
     # expect(page).to have_content "<img src='<%=@venue.photo%>'>"
