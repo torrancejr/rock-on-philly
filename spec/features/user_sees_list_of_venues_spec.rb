@@ -1,10 +1,6 @@
 require 'rails_helper'
-
-# [] Visiting the `/venues` path should contain a list of venues.
-# [] Visiting the `/venues/10` path should show the venue details for a venue with the ID of 10.
-# [] Visiting the root path should display a list of all venues.
-
-feature "visitor sees a list of venues" do
+# ENZYME TEST CHANGE
+xfeature "visitor sees a list of venues" do
   scenario "sees a list of venues and link for new venue" do
     venue = FactoryGirl.create(:venue)
 
