@@ -12,8 +12,6 @@ FactoryGirl.define do
   factory :venue do
     sequence(:name) { |n| "venue#{n}" }
     location '123 5th Street'
-    ages 'All'
-    capacity '1000'
     website 'http://www.utphilly.com/'
     photo 'uniontransfer.jpg'
   end

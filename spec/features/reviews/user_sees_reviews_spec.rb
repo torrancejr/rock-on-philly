@@ -21,8 +21,6 @@ feature "user sees all reviews for a venue" do
     Venue.create(
       name: "Philamoca",
       location: "531 N. 12th Street",
-      ages: "All",
-      capacity: 150,
       website: "http://www.philamoca.org/",
       photo: "philamoca.jpg"
     )
@@ -51,8 +49,6 @@ feature "user sees all reviews for a venue" do
         name: "Union Transfer",
         location: "1026 Spring Garden Street
     ",
-        ages: "All",
-        capacity: 1000,
         website: "http://www.utphilly.com/",
         photo: "uniontransfer.jpg"
       )

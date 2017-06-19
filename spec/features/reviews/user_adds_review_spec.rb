@@ -13,8 +13,6 @@ feature "visitors can add reviews for venues" do
     Venue.create(
       name: "Philamoca",
       location: "531 N. 12th Street",
-      ages: "All",
-      capacity: 150,
       website: "http://www.philamoca.org/",
       photo: "philamoca.jpg"
     )

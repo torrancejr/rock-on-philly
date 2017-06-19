@@ -15,8 +15,6 @@ feature "Admin creates a venue" do
     click_link "Create Venue"
     fill_in 'Name', with: 'Philamoca'
     fill_in 'Location', with: '531 N. 12th Street'
-    fill_in 'Ages', with: 'all'
-    fill_in 'Capacity', with: 50
     fill_in 'Website', with: "http://www.philamoca.org/"
     fill_in 'Photo', with: "philamoca.jpg"
     click_button 'Add Venue'
