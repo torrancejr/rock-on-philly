@@ -67,7 +67,7 @@ class VenuesList extends Component {
             id={index + 1}
             name={venue.name}
             url={venue.website}
-            photo={venue.website_url}
+            photo={venue.photo}
             location={venue.location}
           />
         )

@@ -11,8 +11,8 @@ class Venue extends Component {
       <div>
         <a href={`/venues/${this.props.id}`}>
           <img src={this.props.photo}/>
-          <h3>{this.props.name}</h3>
-          <h5>{this.props.location}</h5>
+          <h2>{this.props.name}</h2>
+          <h3>{this.props.location}</h3>
           <p>{this.props.website}</p>
         </a>
       </div>
