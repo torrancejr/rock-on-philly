@@ -1,10 +1,11 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import VenuesList from './components/VenuesList';
 
 $(function() {
   ReactDOM.render(
-    <h1>Boo yaa</h1>,
+    <VenuesList />,
     document.getElementById('app')
   );
 });
