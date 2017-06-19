@@ -1,5 +1,6 @@
 $green: #1AFF00;
 $aqua: #14FFEC;
+$link: #0D7373;
 $nav-gray: #212121;
 $tile-gray: #323232;
 nav {
@@ -10,6 +11,10 @@ h1, h5 {
 }
 h4 {
   color: $aqua
+}
+a {
+  text-decoration: none;
+  color: $link;
 }
 
 #outer-wrapper {
