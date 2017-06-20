@@ -14,7 +14,7 @@ feature "Admin deletes a venue" do
   scenario "an admin can delete a venue" do
     visit root_path
     sign_in_as(admin)
-    click_link venue.name
+    visit venue_path(venue)
     click_link "Delete Venue"
     expect(page).to have_content("Successfully deleted venue")
     expect(page).to_not have_content (venue.name)
@@ -23,7 +23,7 @@ feature "Admin deletes a venue" do
   scenario "an non-admin cannot delete a venue" do
     visit root_path
     sign_in_as(user1)
-    click_link venue.name
+    visit venue_path(venue)
     expect(page).to_not have_content("Delete Venue")
   end
 end
