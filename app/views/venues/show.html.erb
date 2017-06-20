@@ -1,3 +1,4 @@
+<div class="venue">
 <%= @venue.name %>
 <%= @venue.location %>
 <%= @venue.website %>
@@ -14,3 +15,16 @@
   <% end %>
 <% end %>
 <%= link_to "Add a Review", new_venue_review_path(@venue) %>
+<% @reviews.each do |review| %>
+  <ul>
+    <li id="score_<%=review.id%>">
+      Score: <%= review.score %>
+    </li>
+    <li>
+      <%= review.body %>
+    </li>
+    <button id="<%=review.id%>" class="upvote"><i class="material-icons md-18 black6000">thumb_up</i></button>
+    <button id="<%=review.id%>" class="downvote"><i class="material-icons md-18 green6000">thumb_down</i></button>
+  </ul>
+<% end %>
+</div>
