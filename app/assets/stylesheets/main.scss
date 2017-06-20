@@ -5,6 +5,11 @@ $link: #0D7373;
 $nav-gray: #212121;
 $tile-gray: #323232;
 
+#outer-wrapper {
+  background-color: $aqua;
+  text-align: center relative;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: 'Abril Fatface';
 }
@@ -32,10 +37,12 @@ h1 {
 
 body {
   font-family: 'Raleway';
-  margin: 2% 10%;
+  margin: 0px;
+  min-height: 100%;
 }
 a {
   text-decoration: none;
+  font-weight: bold;
   color: $link;
 }
 .callout.secondary {
@@ -43,9 +50,4 @@ a {
   a {
     color: $aqua;
   }
-}
-
-#outer-wrapper {
-  // text-align: center relative;
-  background-color: $aqua;
 }
