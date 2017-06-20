@@ -9,12 +9,13 @@ $(document).ready(function() {
 
 function vote(vote) {
   event.preventDefault();
-  debugger;
+  var url = document.documentURI;
+  var venueId = url.substring(url.lastIndexOf('/') + 1);
   reviewId = this.document.activeElement.attributes.id.value
 
   var request = $.ajax({
     method: "POST",
-    url: '/api/v1/venues/' + venue.id + '/reviews' + review.id + '/votes',
+    url: '/api/v1/venues/' + venueId + '/reviews/' + reviewId + '/votes',
     data: { vote: vote }
   });
 

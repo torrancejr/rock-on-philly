@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :venues, only: [:show] do
         resources :reviews, only: [:create] do
-          resources :votes, only: [:create]
+          resources :votes, only: [:create, :destroy]
           end
         end
       end

@@ -1,3 +1,4 @@
+<div class="venue">
 <%= @venue.name %>
 <%= @venue.location %>
 <%= @venue.website %>
@@ -22,7 +23,8 @@
     <li>
       <%= review.body %>
     </li>
-    <button id="<%=review.id%>" class="upvote">Upvote</button>
-    <button id="<%=review.id%>" class="downvote">Downvote</button>
+    <button id="<%=review.id%>" class="upvote"><i class="material-icons md-18 black6000">thumb_up</i></button>
+    <button id="<%=review.id%>" class="downvote"><i class="material-icons md-18 green6000">thumb_down</i></button>
   </ul>
 <% end %>
+</div>

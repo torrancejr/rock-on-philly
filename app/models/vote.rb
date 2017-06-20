@@ -4,4 +4,7 @@ class Vote < ApplicationRecord
 
   validates :user_id, presence: true
   validates :review_id, presence: true
+  validates :review, uniqueness: { scope: :user }
+  validates :user, uniqueness: { scope: :review }
+
 end
