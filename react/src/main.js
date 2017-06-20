@@ -1,13 +1,11 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import VenuesList from './components/VenuesList';
 
 $(function() {
-  let appdiv = document.getElementById('app')
-  if (appdiv) {
-    ReactDOM.render(
-      <h1>Boo yaa</h1>,
-      appdiv
-    );
-  }
+  ReactDOM.render(
+    <VenuesList />,
+    document.getElementById('app')
+  );
 });
