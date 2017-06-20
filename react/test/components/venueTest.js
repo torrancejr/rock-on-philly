@@ -2,7 +2,7 @@ import Venue from '../../src/components/Venue';
 import { mount } from 'enzyme';
 import React from 'react';
 
-describe('VenuesList', () => {
+describe('Venues', () => {
   let website_photo,
       name,
       location,
