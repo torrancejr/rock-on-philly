@@ -7,7 +7,7 @@ class Api::V1::VotesController < ApplicationController
     if @vote.nil?
       Vote.create(review: review, user: current_user, upvote: params[:vote])
       render json: { score: review.score }
-    else @vote.exists?
+    elsif @vote.exists?
       Vote.update(review: review, user: current_user, upvote: params[:vote])
       render json: { score: review.score }
     end
