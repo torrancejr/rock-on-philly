@@ -1,0 +1,28 @@
+$green: #1AFF00;
+$aqua: #14FFEC;
+$link: #0D7373;
+$nav-gray: #212121;
+$tile-gray: #323232;
+nav {
+  background-color: $nav-gray
+}
+h1, h5 {
+  color: $green;
+}
+h4 {
+  color: $aqua
+}
+a {
+  text-decoration: none;
+  color: $link;
+}
+
+#outer-wrapper {
+  text-align: center relative;
+}
+
+#wrapper {
+  padding: 60px;
+  background-color: $aqua;
+  border-radius: 10px;
+}
