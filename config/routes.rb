@@ -4,9 +4,14 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :venues, only: [:index]
+      resources :venues, only: [:index, :show] do
+        resources :reviews, only: [:create] do
+          resources :votes, only: [:create, :destroy]
+          end
+        end
+      end
     end
-  end
+
 
   namespace :admin do
     resources :venues
