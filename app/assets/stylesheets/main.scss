@@ -25,10 +25,12 @@ h1 {
 .top-bar {
   background-color: $nav-gray;
   text-align: left;
+  
   .top-bar-left {
     background-color: $nav-gray;
     color: $green;
   }
+
   .menu {
     background-color: $nav-gray;
     a {
