@@ -8,8 +8,8 @@ $(function() {
   let app = document.getElementById( 'app' );
   if (app) {
   ReactDOM.render(
-  <VenuesList />,
-  app
+      <VenuesList />,
+      app
     );
   };
 });
