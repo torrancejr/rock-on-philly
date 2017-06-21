@@ -1,0 +1,60 @@
+
+$green: #1aff00;
+$aqua: #14ffec;
+$link: #0d7373;
+$nav-gray: #212121;
+$tile-gray: #323232;
+
+#outer-wrapper {
+  background-color: $aqua;
+  text-align: center relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Abril Fatface";
+}
+
+h1 {
+  color: $green;
+}
+
+.top-bar {
+  background-color: $nav-gray;
+  text-align: left;
+  
+  .top-bar-left {
+    background-color: $nav-gray;
+    color: $green;
+  }
+
+  .menu {
+    background-color: $nav-gray;
+    a {
+      color: $aqua;
+      font-weight: bold;
+    }
+  }
+}
+
+body {
+  font-family: "Raleway";
+  margin: 0;
+  min-height: 100%;
+}
+
+a {
+  color: $link;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.callout.secondary {
+  background-color: $tile-gray;
+  a {
+    color: $aqua;
+  }
+}
