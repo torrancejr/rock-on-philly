@@ -1,4 +1,5 @@
 require 'rest-client'
+Venue.destroy_all
 
 response = RestClient.get 'https://api.yelp.com/v3/businesses/search?location=Philadelphia&categories=musicvenues', {:Authorization => ENV['YELP_KEY']}
 
