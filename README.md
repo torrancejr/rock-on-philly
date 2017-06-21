@@ -4,6 +4,8 @@
 ![Code Climate](https://codeclimate.com/github/meaghanconroy/rock-on-philly.png)
 ![Coverage Status](https://coveralls.io/repos/meaghanconroy/rock-on-philly/badge.png)
 
+My group will totally have a kick butt readme by the end of this week :)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
