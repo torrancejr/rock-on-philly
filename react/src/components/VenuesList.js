@@ -26,8 +26,8 @@ class VenuesList extends Component {
   }
 
   handleClick(event){
-    this.setState({ currentPage: event.target.id })
-  }
+    this.setState({ currentPage: event.target.id });
+  };
 
   getData() {
     fetch('http://localhost:3000/api/v1/venues.json')
