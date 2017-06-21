@@ -12,6 +12,7 @@ class VenuesList extends Component {
     this.getData = this.getData.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   previousPage(event) {
@@ -22,6 +23,10 @@ class VenuesList extends Component {
   nextPage(event) {
     let newPage = this.state.currentPage + 1;
     this.setState({ currentPage: newPage })
+  }
+
+  handleClick(event){
+    this.setState({ currentPage: event.target.id })
   }
 
   getData() {
@@ -72,9 +77,35 @@ class VenuesList extends Component {
           />
         )
       });
+
+      let pageNumbers = [];
+
+      for(let i = 1; i <= Math.ceil(this.state.venues.length / this.state.venuesPerPage); i++) {
+      pageNumbers.push(i);
+    }
+
+    let renderPageNumbers = pageNumbers.map(number => {
+      return(
+        <li
+          key={number}
+          id={number}
+          onClick={this.handleClick}
+        >
+          {number}
+        </li>
+      )
+    })
+
     return (
       <div>
-        {newVenues}
+        <div>
+          {newVenues}
+        </div>
+        <ul>
+          <li>
+            {renderPageNumbers}
+          </li>
+        </ul>
       </div>
     )
   }
