@@ -18,6 +18,7 @@ feature "visitors can add reviews for venues" do
     )
   end
   scenario "adds a review for a venue successfully" do
+    ActionMailer::Base.deliveries.clear
     visit root_path
     click_link 'Sign Up'
     fill_in 'First Name', with: "Meg"
@@ -41,6 +42,7 @@ feature "visitors can add reviews for venues" do
     expect(page).to have_content philamoca.name
     expect(page).to have_content 5
     expect(page).to have_content "This is a raving review!"
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
   scenario "adds a review for a venue unsuccessfully" do
