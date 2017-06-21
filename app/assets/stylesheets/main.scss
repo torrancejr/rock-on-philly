@@ -1,7 +1,7 @@
 
-$green: #1AFF00;
-$aqua: #14FFEC;
-$link: #0D7373;
+$green: #1aff00;
+$aqua: #14ffec;
+$link: #0d7373;
 $nav-gray: #212121;
 $tile-gray: #323232;
 
@@ -10,9 +10,14 @@ $tile-gray: #323232;
   text-align: center relative;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Abril Fatface';
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Abril Fatface";
 }
+
 h1 {
   color: $green;
 }
@@ -20,8 +25,6 @@ h1 {
 .top-bar {
   background-color: $nav-gray;
   text-align: left;
-  // padding: 30px 40px 20px 40px;
-  // margin: 0px;
   .top-bar-left {
     background-color: $nav-gray;
     color: $green;
@@ -36,15 +39,17 @@ h1 {
 }
 
 body {
-  font-family: 'Raleway';
-  margin: 0px;
+  font-family: "Raleway";
+  margin: 0;
   min-height: 100%;
 }
+
 a {
-  text-decoration: none;
-  font-weight: bold;
   color: $link;
+  font-weight: bold;
+  text-decoration: none;
 }
+
 .callout.secondary {
   background-color: $tile-gray;
   a {
