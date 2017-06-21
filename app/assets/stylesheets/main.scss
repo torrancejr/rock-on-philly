@@ -5,6 +5,7 @@ $link: #0d7373;
 $nav-gray: #212121;
 $tile-gray: #323232;
 
+
 #outer-wrapper {
   background-color: $aqua;
   text-align: center relative;
@@ -56,3 +57,7 @@ a {
     color: $aqua;
   }
 }
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.green6000 { color: #d22042; }
+.material-icons.black6000 { color: #24b694; }
