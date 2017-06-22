@@ -7,4 +7,5 @@ class Vote < ApplicationRecord
   validates :review, uniqueness: { scope: :user }
   validates :user, uniqueness: { scope: :review }
 
+  
 end

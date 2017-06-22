@@ -20,6 +20,6 @@ function vote(vote) {
   });
 
   request.done(function(data) {
-    document.getElementById("score_" + reviewId).innerHTML = "Score: " + data.score;
+    document.getElementById("score_" + reviewId).innerHTML = "Score: " + data.score
   });
 }
