@@ -7,12 +7,19 @@ class VenuesList extends Component {
     this.state = {
       venues: [],
       currentPage: 1,
-      venuesPerPage: 9
+      venuesPerPage: 9,
+      search: ''
     }
     this.getData = this.getData.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+
+  updateSearch(event) {
+    this.setState({ search: event.target.value.substr(0,50) })
+    console.log(this.state.search)
   }
 
   previousPage(event) {
@@ -54,18 +61,22 @@ class VenuesList extends Component {
   render() {
      let indexOfLastVenue = this.state.currentPage * this.state.venuesPerPage;
      let indexOfFirstVenue = indexOfLastVenue - this.state.venuesPerPage;
-
      let currentVenues;
+     let filtered = this.state.venues.filter(
+       (venue) => {
+         return venue.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+         }
+       );
 
      if (indexOfFirstVenue < 0 ) {
-         currentVenues = this.state.venues.slice(0, 10);
-       } else if (indexOfLastVenue > this.state.venues.length) {
-         currentVenues = this.state.venues.slice(this.state.venues.length - 10, this.state.venues.length)
+         currentVenues = filtered.slice(0, 10);
+       } else if (indexOfLastVenue > filtered.length) {
+         currentVenues = filtered.slice(indexOfFirstVenue, indexOfLastVenue)
        } else {
          currentVenues = this.state.venues.slice(indexOfFirstVenue, indexOfLastVenue);
-      }
+       }
 
-      let newVenues = currentVenues.map((venue, index) => {
+      let finalVenues = currentVenues.map((venue, index) => {
         return (
           <Venue
             key={index}
@@ -98,13 +109,18 @@ class VenuesList extends Component {
 
     return (
       <div>
+        <input
+           placeholder="Search"
+           type="text"
+           value={this.state.search}
+           onChange={this.updateSearch}
+           className="searchBar"
+          />
         <div>
-          {newVenues}
+          {finalVenues}
         </div>
         <ul>
-          <li>
-            {renderPageNumbers}
-          </li>
+          {renderPageNumbers}
         </ul>
       </div>
     )
