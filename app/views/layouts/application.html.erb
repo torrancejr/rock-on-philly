@@ -1,56 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>ReviewSite</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Raleway" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Rock On Philly" %></title>
+
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <nav class="top-bar">
+      <div class="top-bar-left">
+        <h1 class="menu-text">
+          <%= link_to "ROCK ON PHILLY", root_path %>
+        </h1>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <% if user_signed_in? %>
+          <% if current_user.admin? %>
+          <li>
+            <%= link_to "View Users", admin_users_path %>
+          </li>
+          <li>
+            <%= link_to "Create Venue", new_venue_path %>
+          </li>
+          <% end %>
+          <li>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+          <li>
+            <img src="<%=current_user.profile_photo%>">
+          </li>
+          <li>
+            <%= link_to "Edit/Delete Profile", edit_user_registration_path %>
+          </li>
+          <% else %>
+          <li>
+            <%= link_to "Sign In", new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <div id="outer-wrapper" class="row">
       <div id="wrapper">
         <div class="fixed">
-          <nav class="top-bar">
-            <div class="top-bar-left">
-              <h1 class="menu-text">VENUE REVIEWS</li>
-              </h1>
-            </div>
-            <div class="top-bar-right">
-              <ul class="menu">
-                <% if user_signed_in? %>
-                  <% if current_user.admin? %>
-                  <li>
-                    <%= link_to "View Users", admin_users_path %>
-                  </li>
-                  <li>
-                    <%= link_to "Create Venue", new_venue_path %>
-                  </li>
-                  <% end %>
-                  <li>
-                    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-                  </li>
-                  <li>
-                    <img src="<%=current_user.profile_photo%>">
-                  </li>
-                  <li>
-                    <%= link_to "Edit/Delete Profile", edit_user_registration_path %>
-                  </li>
-                  <% else %>
-                  <li>
-                    <%= link_to "Sign In", new_user_session_path %>
-                  </li>
-                  <li>
-                    <%= link_to "Sign Up", new_user_registration_path %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </nav>
         </div>
         <% flash.each do |key, value| %>
           <%= value %>

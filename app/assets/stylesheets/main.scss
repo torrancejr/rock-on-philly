@@ -4,7 +4,9 @@ $aqua: #14ffec;
 $link: #0d7373;
 $nav-gray: #212121;
 $tile-gray: #323232;
-
+$pink: #ff2aa9;
+$red: #d22042;
+$buttongreen: #24b694;
 
 #outer-wrapper {
   background-color: $aqua;
@@ -24,11 +26,17 @@ h1 {
 }
 
 .top-bar {
+  width: 100%;
   background-color: $nav-gray;
   text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
   .top-bar-left {
     background-color: $nav-gray;
     color: $green;
+    a {
+      color: $green;
+    }
   }
   .menu {
     background-color: $nav-gray;
@@ -46,18 +54,125 @@ body {
 }
 
 a {
-  color: $link;
   font-weight: bold;
   text-decoration: none;
 }
 
-.callout.secondary {
-  background-color: $tile-gray;
-  a {
-    color: $aqua;
+.searchBar {
+  margin: 10px;
+  width: auto;
+}
+
+.crop {
+  height: 200px;
+  width: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  img {
+    height: auto;
+    width: auto;
   }
 }
 
+.expandable {
+  padding: 5px;
+  margin-right: 5px;
+  flex: 1 1 1;
+}
+.expandable.expanded {
+    flex: 1 1 90%;
+  }
+
+.cards-container {
+  flex: 1 1 90%;
+  }
+
+.container {
+   padding-left: 50px;
+   padding-right: 50px;
+ }
+
+.table-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 50px;
+  grid-template-rows: auto;
+  grid-template-rows: auto;
+  @media screen and (max-width: 60em) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 0px;
+  }
+}
+
+.table-card {
+  background-color: $tile-gray;
+  border-radius: 20px;
+  color: #cd86ff;
+  display: flex;
+  flex-direction: column;
+  grid-column-start: auto;
+  grid-column-end: span 1;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  .content {
+    flex: 1 1 0;
+  }
+  a {
+    color: $pink;
+  }
+  .review {
+    border: 2px solid $green;
+    padding: 10px;
+    margin: 10px;
+  }
+  .table-card div {
+    padding: 0px 10px;
+    flex: 0 1 auto;
+  }
+}
+
+.pagination {
+  clear: both;
+  position: relative;
+  text-align: center;
+  li {
+    background-color: $green;
+    border: 2px solid $nav-gray;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+  }
+}
+
+
+.button {
+  position: center;
+}
+
+.venue {
+  text-align: center;
+  img {
+    height: auto;
+    width: 50em;
+  }
+}
+
+.no-grid-warning {
+  background-color: $pink;
+  color: $pink;
+  height: 100vh;
+  left: 0;
+  padding: 20px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100vw;
+  z-index: 10000;
+}
+
 .material-icons.md-18 { font-size: 18px; }
-.material-icons.green6000 { color: #d22042; }
-.material-icons.black6000 { color: #24b694; }
+.material-icons.green6000 { color: $red; }
+.material-icons.black6000 { color: $buttongreen; }

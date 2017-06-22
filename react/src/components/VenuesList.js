@@ -37,7 +37,7 @@ class VenuesList extends Component {
   };
 
   getData() {
-    fetch('https://rock-on-philly.herokuapp.com/api/v1/venues.json')
+    fetch('http://localhost:3000/api/v1/venues.json')
       .then(response => {
         if (response.ok) {
           return response;
@@ -116,12 +116,16 @@ class VenuesList extends Component {
            onChange={this.updateSearch}
            className="searchBar"
           />
-        <div>
-          {finalVenues}
+        <div className="expandable">
+          <div className="cards-container">
+            <div className="table-cards">
+              {finalVenues}
+            </div>
+          </div>
         </div>
-        <ul>
+        <div className="pagination">
           {renderPageNumbers}
-        </ul>
+        </div>
       </div>
     )
   }
