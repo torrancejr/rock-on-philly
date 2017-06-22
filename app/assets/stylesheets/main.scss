@@ -114,6 +114,9 @@ a {
   padding: 20px;
   border-radius: 20px;
   color: #cd86ff;
+  .content {
+    flex: 1 1 0;
+  }
   a {
     color: #ff2aa9;
   }
@@ -123,27 +126,23 @@ a {
     margin: 10px;
   }
   .table-card div {
-      padding: 0px 10px;
-      flex: 0 1 auto;
+    padding: 0px 10px;
+    flex: 0 1 auto;
   }
 }
 
-.table-card .content {
-  flex: 1 1 0;
-}
-
 .pagination {
-   clear:both;
-   position:relative;
-   text-align:center;
-   li {
-     font-size: 20px;
-     font-weight: bold;
-     padding: 10px;
-     border: 2px solid $nav-gray;
-     border-radius: 50px;
-     background-color: $green;
-   }
+  clear: both;
+  position: relative;
+  text-align: center;
+  li {
+    background-color: $green;
+    border: 2px solid $nav-gray;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+  }
 }
 
 
@@ -160,16 +159,16 @@ a {
 }
 
 .no-grid-warning {
-  position: fixed;
-  width: 100vw;
+  background-color: #ffffff;
+  color: #ff0000;
   height: 100vh;
-  z-index: 10000;
-  color: red;
-  left:0;
-  top:0;
-  background-color: #fff;
-  text-align:center;
+  left: 0;
   padding: 20px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100vw;
+  z-index: 10000;
 }
 
 .material-icons.md-18 { font-size: 18px; }
