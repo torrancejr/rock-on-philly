@@ -4,7 +4,9 @@ $aqua: #14ffec;
 $link: #0d7373;
 $nav-gray: #212121;
 $tile-gray: #323232;
-
+$pink: #ff2aa9;
+$red: #d22042;
+$buttongreen: #24b694;
 
 #outer-wrapper {
   background-color: $aqua;
@@ -104,21 +106,21 @@ a {
 }
 
 .table-card {
+  background-color: $tile-gray;
+  border-radius: 20px;
+  color: #cd86ff;
   display: flex;
   flex-direction: column;
   grid-column-start: auto;
   grid-column-end: span 1;
   margin: 10px;
-  text-align: center;
-  background-color: $tile-gray;
   padding: 20px;
-  border-radius: 20px;
-  color: #cd86ff;
+  text-align: center;
   .content {
     flex: 1 1 0;
   }
   a {
-    color: #ff2aa9;
+    color: $pink;
   }
   .review {
     border: 2px solid $green;
@@ -159,8 +161,8 @@ a {
 }
 
 .no-grid-warning {
-  background-color: #ffffff;
-  color: #ff0000;
+  background-color: $pink;
+  color: $pink;
   height: 100vh;
   left: 0;
   padding: 20px;
@@ -172,5 +174,5 @@ a {
 }
 
 .material-icons.md-18 { font-size: 18px; }
-.material-icons.green6000 { color: #d22042; }
-.material-icons.black6000 { color: #24b694; }
+.material-icons.green6000 { color: $red; }
+.material-icons.black6000 { color: $buttongreen; }
