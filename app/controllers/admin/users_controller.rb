@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    if @user.destroyable_by?(current_user)
+    if current_user.admin?
       @user.destroy
       flash[:notice] = "User account deleted"
       redirect_to admin_users_path

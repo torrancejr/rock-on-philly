@@ -4,6 +4,7 @@ require 'coveralls'
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
    add_filter 'app/channels/application_cable'
-   'app/jobs'
-   'app/controllers/api/v1/votes_controller.rb'
+   add_filter 'app/jobs'
+   add_filter 'app/controllers/api/v1/votes_controller.rb'
+   add_filter 'config/initializers'
 end

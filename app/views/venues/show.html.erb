@@ -12,6 +12,8 @@
   <%= review.created_at.strftime("%B %d %Y") %>
   <% if review.user == current_user || current_user.try(:admin?) %>
     <%= link_to "Delete Review", venue_review_path(review.venue, review), method: :delete %>
+  </br>
+  <%= link_to "Edit Review", edit_venue_review_path(review.venue, review) %>
   <% end %>
 <% end %>
 <%= link_to "Add a Review", new_venue_review_path(@venue) %>

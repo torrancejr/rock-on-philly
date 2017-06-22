@@ -24,6 +24,18 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  def update
+    @venue = Venue.find(params[:venue_id])
+    @review = Review.find(params[:id])
+    if @review.update_attributes(review_params)
+      flash[:notice] = "Review updated!"
+      redirect_to venue_path(@venue)
+    else
+      flash[:notice] = @review.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
   def destroy
     @venue = Venue.find(params[:venue_id])
     @review = Review.find(params[:id])

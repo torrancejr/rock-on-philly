@@ -27,4 +27,16 @@ feature "Admin creates a venue" do
     sign_in_as(user1)
     expect(page).to_not have_content("Create Venue")
   end
+  scenario "an admin fails to create a review" do
+    visit root_path
+    sign_in_as(admin)
+    click_link "Create Venue"
+    fill_in 'Name', with: ''
+    fill_in 'Location', with: '531 N. 12th Street'
+    fill_in 'Website', with: "http://www.philamoca.org/"
+    fill_in 'Photo', with: "philamoca.jpg"
+    click_button 'Add Venue'
+    expect(page).to_not have_content("Successfully created venue")
+    expect(page).to have_content("Name can't be blank")
+  end
 end
