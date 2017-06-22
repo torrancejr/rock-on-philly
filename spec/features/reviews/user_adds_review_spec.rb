@@ -31,7 +31,7 @@ feature "visitors can add reviews for venues" do
 
     visit venue_path(philamoca)
 
-    click_link "Add a Review"
+    click_button "Add a Review"
 
     expect(page).to have_content "Review Form for Philamoca"
 
