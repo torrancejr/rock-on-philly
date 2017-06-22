@@ -7,26 +7,29 @@
 <% end %>
 <img src="<%=@venue.photo%>">
 <% @reviews.each do |review| %>
-  <%= review.rating %>
-  <%= review.body %>
-  <%= review.created_at.strftime("%B %d %Y") %>
-  <% if review.user == current_user || current_user.try(:admin?) %>
-    <%= link_to "Delete Review", venue_review_path(review.venue, review), method: :delete %>
-  </br>
-  <%= link_to "Edit Review", edit_venue_review_path(review.venue, review) %>
-  <% end %>
-<% end %>
-<%= link_to "Add a Review", new_venue_review_path(@venue) %>
-<% @reviews.each do |review| %>
   <ul>
+    <li><%= review.user.first_name %> </li>
+    <li> Rating: <%= review.rating %> </li>
+    <li><%= review.body %></li>
+    <li><%= review.created_at.strftime("%B %d %Y") %></li>
     <li id="score_<%=review.id%>">
       Score: <%= review.score %>
     </li>
-    <li>
-      <%= review.body %>
-    </li>
-    <button id="<%=review.id%>" class="upvote"><i class="material-icons md-18 black6000">thumb_up</i></button>
-    <button id="<%=review.id%>" class="downvote"><i class="material-icons md-18 green6000">thumb_down</i></button>
+    <button id="<%=review.id%>" class="upvote">
+      <i class="material-icons md-18 black6000">thumb_up</i>
+    </button>
+    <button id="<%=review.id%>" class="downvote">
+      <i class="material-icons md-18 green6000">thumb_down</i>
+    </button>
+    <% if review.user == current_user || current_user.try(:admin?) %>
+      </br>
+      <%= link_to "Delete Review", venue_review_path(review.venue, review), method: :delete %>
+      </br>
+      <%= link_to "Edit Review", edit_venue_review_path(review.venue, review) %>
+      </br>
+    <% end %>
   </ul>
 <% end %>
+<%= link_to "Add a Review", new_venue_review_path(@venue) %>
+
 </div>
