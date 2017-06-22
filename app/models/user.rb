@@ -12,11 +12,4 @@ class User < ApplicationRecord
   validates :email, presence: true, format: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates :admin, inclusion: { in: [true, false] }
 
-  def editable_by?(user)
-    user.admin?
-  end
-
-  def destroyable_by?(user)
-    user.admin?
-  end
 end

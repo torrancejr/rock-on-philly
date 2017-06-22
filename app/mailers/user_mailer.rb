@@ -1,11 +1,5 @@
 class UserMailer < ApplicationMailer
 
-  def welcome_email(user)
-    @user = User.find(params[:id])
-    @url  = new_user_session_path
-    mail(to: @user.email, subject: 'Welcome to Our Awesome Site')
-  end
-
   def new_review(review)
     @review = review
     mail(

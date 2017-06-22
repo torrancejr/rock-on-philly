@@ -1,0 +1,10 @@
+<h1>Review Form for <%= @venue.name %></h1>
+<%= form_for [@venue, @review] do |f| %>
+<%= f.label :rating %>
+<%= f.text_field :rating %>
+
+<%= f.label :body, "Body" %>
+<%= f.text_area :body %>
+
+<%= f.submit "Add Review" %>
+<% end %>
