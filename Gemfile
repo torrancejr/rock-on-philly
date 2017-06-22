@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'carrierwave', '~> 1.1'
+gem 'coveralls'
 gem 'devise'
 gem 'fog'
 gem 'rails', '~> 5.1.1'
@@ -27,7 +28,6 @@ gem 'jquery-rails'
 gem 'rails_12factor'
 gem 'rest-client'
 gem 'simplecov'
-
 
 group :test do
   gem 'coveralls', require: false
