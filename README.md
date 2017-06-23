@@ -4,27 +4,35 @@
 ![Code Climate](https://codeclimate.com/github/meaghanconroy/rock-on-philly.png)
 ![Coverage Status](https://coveralls.io/repos/meaghanconroy/rock-on-philly/badge.png)
 
-My group will totally have a kick butt readme by the end of this week :)
+Rock on Philly is a React/Ruby based concert venue website. The application uses a background worker to fetch from the Yelp API to populate an up to date database of all concert venues in the Philadelphia area. Users can sign up and navigate through website to see locations, reviews, and photos of each venue.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Meaghan Conroy, Chris Casella, and Ryan Torrance
 
-Things you may want to cover:
+Heroku link: https://rock-on-philly.herokuapp.com/
 
-* Ruby version
+* Features:
+  As a user you have the ability
+    * Create a profile and sign up for our website.
+    * Receive email notifications
+    * Sign in and sign out
+    * See a list of Philadelphia concert venues
+    * Submit reviews on your concert experiences at each venue
+    * Upvote/Downvote user reviews
 
-* System dependencies
+  As an admin you have the ability
+    * Edit and delete users
+    * Create and delete venues
+    * View all users
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Technologies incorporated:
+    * Ruby version 2.3.3 (Rails framework)
+    * React
+    * Ruby on Rails 5.1.1
+    * Foundation for styling
+    * Devise for user interaction
+    * ActiveRecord for database maintenance
+    * Yelp API integration (through fetch requests)
+    * RSpec/Capybara for testing suite
+    * Karma/Enzyme for testing React.
+    * Github for collaboration
+    * Heroku for deployment
