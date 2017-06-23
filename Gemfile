@@ -27,6 +27,7 @@ gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'rails_12factor'
 gem 'rest-client'
+gem 'sendgrid-ruby'
 gem 'simplecov'
 
 group :test do
