@@ -35,7 +35,7 @@
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
           </li>
           <li>
-            <img class="profile" src="<%=current_user.profile_photo%>">
+            <p class="profile-picture"><%= image_tag review.user.profile_photo.url, size: "60x60" %></p>
           </li>
           <li>
             <%= link_to "Edit/Delete Profile", edit_user_registration_path %>
