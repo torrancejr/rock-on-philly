@@ -12,7 +12,12 @@ $buttongreen: #24b694;
   background-color: $aqua;
   text-align: center relative;
 }
-
+img {
+  .profile {
+    height: 20px;
+    width: 20px;
+  }
+}
 h1,
 h2,
 h3,
