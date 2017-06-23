@@ -19,12 +19,14 @@
         <%= review.created_at.strftime("%B %d %Y") %></br>
         <p id="score_<%=review.id%>">
           Score: <%= review.score %></br>
-        <button id="<%=review.id%>" class="upvote">
-          <i class="material-icons md-18 black6000">thumb_up</i>
-        </button>
-        <button id="<%=review.id%>" class="downvote">
-          <i class="material-icons md-18 green6000">thumb_down</i>
-        </button>
+        <div>
+          <button id="<%=review.id%>" class="upvote">
+            <i class="material-icons md-18 black6000">thumb_up</i>
+          </button>
+          <button id="<%=review.id%>" class="downvote">
+            <i class="material-icons md-18 green6000">thumb_down</i>
+          </button>
+        </div>
         <% if review.user == current_user || current_user.try(:admin?) %>
           </br>
           <%= link_to "Delete Review", venue_review_path(review.venue, review), method: :delete %>
