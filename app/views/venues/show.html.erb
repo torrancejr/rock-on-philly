@@ -11,6 +11,7 @@
     <% @reviews.each do |review| %>
       <div class="review">
         <i class="material-icons">account_circle</i><h5> <%= review.user.first_name %></h5></br>
+        <% binding.pry %>
         <% if review.user.profile_photo.present? %>
           <img src="<%=review.user.profile_photo%>">
         <% end %>
