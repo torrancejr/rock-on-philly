@@ -80,7 +80,7 @@ class VenuesList extends Component {
         return (
           <Venue
             key={index}
-            id={index + 1}
+            id={venue.id}
             name={venue.name}
             url={venue.website}
             photo={venue.photo}
