@@ -1,10 +1,20 @@
-<h1>Review Form for <%= @venue.name %></h1>
-<%= form_for [@venue, @review] do |f| %>
-<%= f.label :rating %>
-<%= f.text_field :rating %>
-
-<%= f.label :body, "Body" %>
-<%= f.text_area :body %>
-
-<%= f.submit "Add Review" %>
-<% end %>
+<h2>Review Form for <%= @venue.name %></h2>
+<div class="expandable">
+  <div class="cards-container">
+    <div class="table-cards">
+      <%= form_for [@venue, @review] do |f| %>
+        <div class="field">
+          <%= f.label :rating %>
+          <%= f.text_field :rating %>
+        </div>
+        <div class="field">
+          <%= f.label :body, "Body" %>
+          <%= f.text_area :body %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Add Review" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
