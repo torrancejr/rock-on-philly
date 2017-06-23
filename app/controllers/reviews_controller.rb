@@ -10,9 +10,9 @@ class ReviewsController < ApplicationController
     @review.venue = @venue
     @review.user = current_user
     if @review.save
+      redirect_to venue_path(@venue)
       flash[:notice] = "Review added successfully"
       UserMailer.new_review(@review).deliver_now
-      redirect_to venue_path(@venue)
     else
       flash[:notice] = @review.errors.full_messages.to_sentence
       render :new
