@@ -37,9 +37,7 @@ class VenuesList extends Component {
   };
 
   getData() {
-    fetch('https://rock-on-philly.herokuapp.com/api/v1/venues.json',
-      { mode: 'cors' }
-    )
+    fetch('https://rock-on-philly.herokuapp.com/api/v1/venues.json')
       .then(response => {
         if (response.ok) {
           return response;
